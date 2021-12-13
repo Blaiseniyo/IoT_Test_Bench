@@ -47,7 +47,7 @@ function Header (){
 
      return(
          <React.Fragment>
-            <AppBar position='static' className={classes.back}>{displayDesktop()}</AppBar>
+            <AppBar position='fixed' className={classes.back}>{displayDesktop()}</AppBar>
          </React.Fragment>
      )
  

@@ -1,4 +1,13 @@
 @import "./variables";
+
+@mixin container($width) {
+  width: $width;
+  margin: auto;
+}
+@mixin position($position,$top) {
+  position: relative;
+  top:$top;
+}
 .App {
 	text-align: center;
 }
@@ -23,7 +32,34 @@
 	right: 0;
 	padding-top: 0.5px;
 }
+.container{
+  @include container(90%);
+}
 
+.separator{
+  margin: 8px;
+  padding-right: 6px;
+}
+
+.btnContainer{
+  display: flex;
+  justify-content: space-between;
+  align-content:space-between ;
+}
+.right-space{
+  margin-right: 10px;
+}
+
+.fullHeight{
+  height: 100%;
+}
+.card{
+  min-height: 50%;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  padding: 20px;
+  border-radius: 8px;
+  height: 95%;
+}
 // my styles ends here
 
 @media (prefers-reduced-motion: no-preference) {
