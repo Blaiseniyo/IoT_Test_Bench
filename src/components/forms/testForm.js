@@ -4,7 +4,7 @@ import { Formik, Form} from "formik";
 import "../../App.scss";
 
 export const PublisherForm = () => {
-    const [values,setValues] = useState({numberOfPublisher:0,topicLevels:0,interval:0,messageSize:0,numberOfSubscribers:0,subscriberTopicLevels:0});
+    const [values,setValues] = useState({numberOfPublisher:0,topicLevels:0,interval:10,messageSize:1,numberOfSubscribers:0,subscriberTopicLevels:0});
     const handleOnChange =(newValue)=>{
         setValues({...values,...newValue});
     }
@@ -66,7 +66,7 @@ export const PublisherForm = () => {
               <Grid item container direction="row">
                 <Grid item sm={12} lg={5}>
                   <div>
-                    <Typography>Interval </Typography>
+                    <Typography>Interval (ms))</Typography>
                   </div>
                 </Grid>
                 <Grid item sm={12} lg={5}>
@@ -76,8 +76,8 @@ export const PublisherForm = () => {
                     valueLabelDisplay="auto"
                     aria-labelledby="disabled-slider"
                     defaultValue={0}
-                    min={0}
-                    max={10}
+                    min={10}
+                    max={10000}
                     onChange={(e,value)=> handleOnChange({"interval":value})}
                   />
                 </Grid>
@@ -85,7 +85,7 @@ export const PublisherForm = () => {
               <Grid item container direction="row">
                 <Grid item sm={12} lg={5}>
                   <div>
-                    <Typography>Message Size </Typography>
+                    <Typography>Message Size (kb) </Typography>
                   </div>
                 </Grid>
                 <Grid item sm={12} lg={5}>
@@ -95,8 +95,8 @@ export const PublisherForm = () => {
                     valueLabelDisplay="auto"
                     aria-labelledby="disabled-slider"
                     defaultValue={0}
-                    min={0}
-                    max={10}
+                    min={1}
+                    max={1024}
                     onChange={(e,value)=> handleOnChange({"messageSize":value})}
                   />
                 </Grid>
