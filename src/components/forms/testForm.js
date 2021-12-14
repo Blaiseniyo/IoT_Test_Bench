@@ -39,7 +39,7 @@ export const PublisherForm = () => {
                     aria-labelledby="disabled-slider"
                     defaultValue={0}
                     min={0}
-                    max={10}
+                    max={100}
                     onChange={(e,value)=> handleOnChange({"numberOfPublisher":value})}
                   />
                 </Grid>
@@ -58,7 +58,7 @@ export const PublisherForm = () => {
                     aria-labelledby="disabled-slider"
                     defaultValue={0}
                     min={0}
-                    max={10}
+                    max={100}
                     onChange={(e,value)=> handleOnChange({"topicLevels":value})}
                   />
                 </Grid>
@@ -66,7 +66,7 @@ export const PublisherForm = () => {
               <Grid item container direction="row">
                 <Grid item sm={12} lg={5}>
                   <div>
-                    <Typography>Interval (ms))</Typography>
+                    <Typography>Interval (ms)</Typography>
                   </div>
                 </Grid>
                 <Grid item sm={12} lg={5}>
@@ -116,7 +116,7 @@ export const PublisherForm = () => {
                     aria-labelledby="disabled-slider"
                     defaultValue={0}
                     min={0}
-                    max={10}
+                    max={100}
                     onChange={(e,value)=> handleOnChange({"numberOfSubscribers":value})}
                   />
                 </Grid>
@@ -135,7 +135,7 @@ export const PublisherForm = () => {
                     aria-labelledby="disabled-slider"
                     defaultValue={0}
                     min={0}
-                    max={10}
+                    max={100}
                     onChange={(e,value)=> handleOnChange({"subscriberTopicLevels":value})}
                   />
                 </Grid>

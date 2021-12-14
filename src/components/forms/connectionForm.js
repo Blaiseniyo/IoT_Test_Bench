@@ -40,7 +40,7 @@ export const ConnectionForm = () => {
         {({ errors, touched }) => (
           <Form form-data="form-1">
             <Grid container justifyContent="flex-start" alignItems="stretch" spacing={1}>
-              <Grid sm={12} lg={7}>
+              <Grid item sm={12} lg={7}>
                 <Field
                   name="host"
                   label="Broker Host"
@@ -58,7 +58,7 @@ export const ConnectionForm = () => {
                   }}
                 />
               </Grid>
-              <Grid sm={12} lg={5}>
+              <Grid item sm={12} lg={5}>
                 <Field
                   name="port"
                   label="Host Port"
@@ -76,7 +76,7 @@ export const ConnectionForm = () => {
                   }}
                 />
               </Grid>
-              <Grid sm={12} lg={7}>
+              <Grid item sm={12} lg={7}>
                 <Field
                   name="userName"
                   label="Username"
@@ -94,7 +94,7 @@ export const ConnectionForm = () => {
                   }}
                 />
               </Grid>
-              <Grid sm={12} lg={5}>
+              <Grid item sm={12} lg={5}>
                 <Field
                   type="password"
                   name="password"
