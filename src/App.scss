@@ -34,6 +34,7 @@
 }
 .container{
   @include container(90%);
+  background-color: $footerBackground;
 }
 
 .separator{
@@ -108,7 +109,9 @@ p {
 	display: grid;
 	grid-template-columns: auto auto;
 	margin-left: 5%;
-	width: 90%;
+	width: 100%;
+	color: white;
+	// background-color: #61dafb;
 }
 
 .section {

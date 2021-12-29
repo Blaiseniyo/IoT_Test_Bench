@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Slide, Snackbar } from "@material-ui/core";
+import { Slide, Snackbar} from "@material-ui/core";
 // import { useHistory } from "react-router-dom";
 import MuiAlert from "@material-ui/lab/Alert";
 import { clearSnackBar } from "../redux/actions/testBrokerAction";
@@ -18,8 +18,8 @@ const Result = (props) => {
 	// const history = useHistory()
 	const reducer = useSelector((state) => state.TestBroker);
 	const data01 = [
-		{ name: "success", value:reducer.result.sentMessages_percentage, fill: "#32a852" },
 		{ name: "fail", value:(100-reducer.result.sentMessages_percentage), fill: "#d61c1c" },
+		{ name: "success", value:reducer.result.sentMessages_percentage, fill: "#32a852" },
 	];
 
 	// const data02 = [
@@ -34,85 +34,87 @@ const Result = (props) => {
 		dispatch(clearSnackBar());
 	  };
 	return (
-		<div className="container">
-			<Snackbar
-          open={reducer ? reducer.snackBarMessage.open : false}
-          onClose={closeSnackBarTimer}
-          autoHideDuration={4000}
-          TransitionComponent={TransitionUp}
-        >
-          <MuiAlert
-            severity={reducer ? reducer.snackBarMessage.severity : "info"}
-            variant="filled"
-            elevation={6}
-          >
-            {reducer ? reducer.snackBarMessage.message : ""}
-          </MuiAlert>
-        </Snackbar>
+		<>
 			<h2 className="title">Results</h2>
-			<div className="grid-container">
-				<div className="section">
+			<div className="container card">
+				<Snackbar
+			open={reducer ? reducer.snackBarMessage.open : false}
+			onClose={closeSnackBarTimer}
+			autoHideDuration={4000}
+			TransitionComponent={TransitionUp}
+			>
+			<MuiAlert
+				severity={reducer ? reducer.snackBarMessage.severity : "info"}
+				variant="filled"
+				elevation={6}
+			>
+				{reducer ? reducer.snackBarMessage.message : ""}
+			</MuiAlert>
+			</Snackbar>
+				<div className="grid-container">
+					<div className="section">
+						<div>
+							<h3>Message</h3>
+							<p>
+								Sent: <strong>{reducer.result.sentMessages}</strong>
+							</p>
+							<p>
+								Received: <strong>{reducer.result.recievedMessages}</strong>
+							</p>
+						</div>
+						<PieChart width={300} height={200}>
+							<Pie
+								data={data01}
+								dataKey="value"
+								innerRadius={30}
+								outerRadius={40}
+								fill="#82ca9d"
+								label={renderLabel}
+							/>
+						</PieChart>
+					</div>
+					<div className="section">
+						<div>
+							<h3>Data</h3>
+							<p>
+								Sent: <strong>{`${reducer.result.sentSize/1024} MBs`}</strong>
+							</p>
+							<p>
+								Received: <strong>{`${reducer.result.recievedSize/1024} MBs`}</strong>
+							</p>
+						</div>
+						<PieChart width={300} height={200}>
+							<Pie
+								data={data01}
+								dataKey="value"
+								innerRadius={30}
+								outerRadius={40}
+								fill="#82ca9d"
+								label={renderLabel}
+							/>
+						</PieChart>
+					</div>
 					<div>
-						<h3>Message</h3>
+						<h3>Usage</h3>
 						<p>
-							Sent: <strong>{reducer.result.sentMessages}</strong>
+							CPU: <strong>{`${reducer.result.CPU_used}%`}</strong>
 						</p>
 						<p>
-							Received: <strong>{reducer.result.recievedMessages}</strong>
+							Memory: <strong>{`${reducer.result.RAM_size_used} MBs`}</strong>
 						</p>
 					</div>
-					<PieChart width={300} height={200}>
-						<Pie
-							data={data01}
-							dataKey="value"
-							innerRadius={30}
-							outerRadius={40}
-							fill="#82ca9d"
-							label={renderLabel}
-						/>
-					</PieChart>
-				</div>
-				<div className="section">
 					<div>
-						<h3>Data</h3>
+						<h3>Time</h3>
 						<p>
-							Sent: <strong>{`${reducer.result.sentSize/1024} MBs`}</strong>
+							Total Time: <strong>{`${reducer.result.totalTime} seconds`}</strong>
 						</p>
 						<p>
-							Received: <strong>{`${reducer.result.recievedSize/1024} MBs`}</strong>
+							Sent Messages Per Second: <strong>{`${reducer.result.messages_per_second}`}</strong>
 						</p>
 					</div>
-					<PieChart width={300} height={200}>
-						<Pie
-							data={data01}
-							dataKey="value"
-							innerRadius={30}
-							outerRadius={40}
-							fill="#82ca9d"
-							label={renderLabel}
-						/>
-					</PieChart>
-				</div>
-				<div>
-					<h3>Usage</h3>
-					<p>
-						CPU: <strong>{`${reducer.result.CPU_used}%`}</strong>
-					</p>
-					<p>
-						Memory: <strong>{`${reducer.result.RAM_size_used} MBs`}</strong>
-					</p>
-				</div>
-				<div>
-					<h3>Time</h3>
-					<p>
-						Total Time: <strong>{`${reducer.result.totalTime} seconds`}</strong>
-					</p>
-					<p>
-						Sent Messages Per Second: <strong>{`${reducer.result.messages_per_second}`}</strong>
-					</p>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 
