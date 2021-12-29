@@ -5,7 +5,8 @@ import {
   Grid,
   Button,
 } from "@material-ui/core";
-// import VisibilityIcon from "@material-ui/icons/Visibility";
+import { useDispatch, useSelector } from "react-redux";
+import { testConnectionAction } from "../../redux/actions/connectionAction";
 import { Formik, Form, Field } from "formik";
 import {Lock } from "@material-ui/icons";
 import * as yup from 'yup';
@@ -19,21 +20,35 @@ const validationSchema = yup.object({
   port: yup
       .number()
       .required('port is required'),
-  userName: yup
+  topic: yup
       .string()
-      .required('Username is required'),
+      // .required('port is required')
+      ,
+  topicLevel: yup
+      .string()
+      // .required('port is required')
+      ,
+  username: yup
+      .string(),
+      // .required('Username is required'),
   password: yup
       .string()
-      .required("Password is required"),
+      // .required("Password is required"),
 
 });
 export const ConnectionForm = () => {
+  const dispatch = useDispatch();
+  const reducer = useSelector((state) => state.Connection);
+  const renderTestBtnColor = ()=>{
+    const color = reducer.connected?"#388e3c":"#3f51b5"
+  return color
+  }
   return (
     <>
       <Formik
-        initialValues={{host:"",port:"",userName:"",password:""}}
+        initialValues={{host:"",port:"",username:"",password:"",topic:"",topicLevel:""}}
         onSubmit={(values) => {
-            console.log(values);
+            dispatch(testConnectionAction(values));
         }}
         validationSchema={validationSchema}
       >
@@ -56,6 +71,7 @@ export const ConnectionForm = () => {
                       </InputAdornment>
                     ),
                   }}
+                  className="field" 
                 />
               </Grid>
               <Grid item sm={12} lg={5}>
@@ -74,11 +90,12 @@ export const ConnectionForm = () => {
                       </InputAdornment>
                     ),
                   }}
+                  className="field" 
                 />
               </Grid>
               <Grid item sm={12} lg={7}>
                 <Field
-                  name="userName"
+                  name="username"
                   label="Username"
                   margin="normal"
                   as={TextField}
@@ -92,6 +109,7 @@ export const ConnectionForm = () => {
                       </InputAdornment>
                     ),
                   }}
+                  className="field" 
                 />
               </Grid>
               <Grid item sm={12} lg={5}>
@@ -110,25 +128,46 @@ export const ConnectionForm = () => {
                         <Lock />  |
                       </InputAdornment>
                     ),
-                    // endAdornment: (
-                    //   <InputAdornment position="start">
-                    //     <Lock />
-                    //   </InputAdornment>
-                    // ),
                   }}
+                  className="field" 
+                />
+              </Grid>
+              <Grid item sm={12} lg={7}>
+                <Field
+                  name="topic"
+                  label="Topic"
+                  margin="normal"
+                  as={TextField}
+                  variant="outlined"
+                  error={touched.topic && errors.topic}
+                  helperText={touched.topic && errors.topic}
+                  className="field"        
+                />
+              </Grid>
+              <Grid item sm={12} lg={5}>
+                <Field
+                  // type="topic"
+                  name="topicLevel"
+                  label="Topic Level "
+                  margin="normal"
+                  as={TextField}
+                  variant="outlined"
+                  error={touched.topicLevel && errors.topicLevel}
+                  helperText={touched.topicLevel && errors.topicLevel}
+                  className="field" 
                 />
               </Grid>
               <Grid>
 
               <div className="separator">
                 <div className="btnContainer">
-                  <div className="right-space">
-                    <Button variant="contained" color="primary">
-                      Save settings
-                    </Button>
-                  </div>
                   <div>
-                    <Button variant="contained" color="primary" type="submit">
+                    <Button 
+                    type="submit"
+                    variant="contained"
+                     color="primary"
+                     style={{backgroundColor:renderTestBtnColor()}}
+                    >
                       Test Connection
                     </Button>
                   </div>

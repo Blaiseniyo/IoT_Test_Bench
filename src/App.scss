@@ -43,8 +43,8 @@
 
 .btnContainer{
   display: flex;
-  justify-content: space-between;
-  align-content:space-between ;
+  justify-content: center;
+  align-content:center ;
 }
 .right-space{
   margin-right: 10px;
@@ -52,6 +52,10 @@
 
 .fullHeight{
   height: 100%;
+}
+
+.field{
+	width: 100%;
 }
 .card{
   min-height: 50%;
