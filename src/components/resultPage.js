@@ -36,7 +36,7 @@ const Result = (props) => {
 	return (
 		<>
 			<h2 className="title">Results</h2>
-			<div className="container card">
+			<div className="container card container-color">
 				<Snackbar
 			open={reducer ? reducer.snackBarMessage.open : false}
 			onClose={closeSnackBarTimer}

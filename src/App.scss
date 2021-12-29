@@ -34,9 +34,11 @@
 }
 .container{
   @include container(90%);
-  background-color: $footerBackground;
 }
 
+.container-color{
+	background-color: $footerBackground;
+}
 .separator{
   margin: 8px;
   padding-right: 6px;
