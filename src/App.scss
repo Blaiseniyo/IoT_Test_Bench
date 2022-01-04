@@ -36,6 +36,9 @@
   @include container(90%);
 }
 
+.container-color{
+	background-color: $footerBackground;
+}
 .separator{
   margin: 8px;
   padding-right: 6px;
@@ -43,8 +46,8 @@
 
 .btnContainer{
   display: flex;
-  justify-content: space-between;
-  align-content:space-between ;
+  justify-content: center;
+  align-content:center ;
 }
 .right-space{
   margin-right: 10px;
@@ -52,6 +55,10 @@
 
 .fullHeight{
   height: 100%;
+}
+
+.field{
+	width: 100%;
 }
 .card{
   min-height: 50%;
@@ -104,7 +111,9 @@ p {
 	display: grid;
 	grid-template-columns: auto auto;
 	margin-left: 5%;
-	width: 90%;
+	width: 100%;
+	color: white;
+	// background-color: #61dafb;
 }
 
 .section {
