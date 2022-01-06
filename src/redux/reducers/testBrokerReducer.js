@@ -7,7 +7,7 @@ import {
   
   const initialState = {
     pending: false,
-    result:{"sentMessages":0,"recievedMessages":0,"sentMessages_percentage":0,"failedMessage":0,"messages_per_second":0,"totalTime":0, "sentSize":0, "recievedSize":0,"CPU_used":0,"RAM_used":0,"RAM_size_used":0},
+    result:{"sentMessages":0,"recievedMessages":0,"sentMessages_percentage":0,"failedMessage":0,"messages_per_second":0,"totalTime":0, "sentSize":0, "recievedSize":0,"CPU_used":0,"RAM_used":0,"RAM_size_used":0,"received_per_second":0},
     snackBarMessage: {
       open: false,
       severity: '',

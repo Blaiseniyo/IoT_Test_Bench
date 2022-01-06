@@ -11,54 +11,36 @@ function ResultsPending() {
             <Grid container className="wave-separator">
                 <Grid  container xs={6} className="container">
                     <Grid item xs={6}>
-                        <Skeleton animation="pulse" variant="rect" width="50%" height={13}  />
-                        <Skeleton animation="pulse"  width="30%" height={23} />
-                        <Skeleton animation="pulse" width="30%" height={23} />
-                    </Grid>
-                    <Grid item xs={3}>
-                        <Skeleton animation="pulse" variant="circle" width={93} height={93} />
+                        <Skeleton animation="pulse" variant="rect" width="80%" height={13}  />
+                        <Skeleton animation="pulse"  width="60%" height={23} />
+                        <Skeleton animation="pulse" width="60%" height={23} />
+                        <Skeleton animation="pulse" width="60%" height={23} />
+                        <Skeleton animation="pulse" width="60%" height={23} />
                     </Grid>
                 </Grid>
                 <Grid item container xs={6}>
-                    <Grid item xs={6}>
-                        <Skeleton animation="pulse" variant="rect" width="50%" height={13}  />
-                        <Skeleton animation="pulse"  width="30%" height={23} />
-                        <Skeleton animation="pulse" width="30%" height={23} />
-                    </Grid>
-                    <Grid item xs={3}>
-                        <Skeleton animation="pulse" variant="circle" width={93} height={93} />
+                    <Grid item xs={5}>
+                        <Skeleton animation="pulse" variant="rect" width="80%" height={13}  />
+                        <div className='circle-seperator'>
+                            <Skeleton animation="pulse" variant="circle" width={93} height={93} />
+                        </div>
                     </Grid>
                 </Grid>
             </Grid>
             <Grid container className="wave-separator">
                 <Grid  container xs={6} className="container">
                     <Grid item xs={6}>
-                        <Skeleton animation="pulse" variant="rect" width="50%" height={13}  />
-                        <Skeleton animation="pulse"  width="30%" height={23} />
-                        <Skeleton animation="pulse" width="30%" height={23} />
+                        <Skeleton animation="pulse" variant="rect" width="80%" height={13}  />
+                        <Skeleton animation="pulse"  width="60%" height={23} />
+                        <Skeleton animation="pulse" width="60%" height={23} />
                     </Grid>
                 </Grid>
                 <Grid item container xs={6}>
                     <Grid item xs={6}>
-                        <Skeleton animation="pulse" variant="rect" width="50%" height={13}  />
-                        <Skeleton animation="pulse"  width="30%" height={23} />
-                        <Skeleton animation="pulse" width="30%" height={23} />
-                    </Grid>
-                </Grid>
-            </Grid>
-            <Grid container className="wave-separator">
-                <Grid  container xs={6} className="container">
-                    <Grid item xs={6}>
-                        <Skeleton animation="pulse" variant="rect" width="50%" height={13}  />
-                        <Skeleton animation="pulse"  width="30%" height={23} />
-                        <Skeleton animation="pulse" width="30%" height={23} />
-                    </Grid>
-                </Grid>
-                <Grid item container xs={6}>
-                    <Grid item xs={6}>
-                        <Skeleton animation="pulse" variant="rect" width="50%" height={13}  />
-                        <Skeleton animation="pulse"  width="30%" height={23} />
-                        <Skeleton animation="pulse" width="30%" height={23} />
+                        <Skeleton animation="pulse" variant="rect" width="80%" height={13}  />
+                        <Skeleton animation="pulse"  width="60%" height={23} />
+                        <Skeleton animation="pulse" width="60%" height={23} />
+                        <Skeleton animation="pulse" width="60%" height={23} />
                     </Grid>
                 </Grid>
             </Grid>
