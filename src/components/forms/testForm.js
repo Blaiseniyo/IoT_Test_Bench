@@ -32,7 +32,7 @@ export const PublisherForm = () => {
               alignItems="center"
               spacing={1}
             >
-              <h2>Publisher</h2>
+              <h2>TEST BROKER</h2>
               <Grid item container direction="row">
                 <Grid item xs={12}  sm={12} lg={5}>
                   <div>
@@ -52,25 +52,6 @@ export const PublisherForm = () => {
                   />
                 </Grid>
               </Grid>
-              {/* <Grid item container direction="row">
-                <Grid item xs={12} sm={12} lg={5}>
-                  <div>
-                    <Typography>Topic Levels </Typography>
-                  </div>
-                </Grid>
-                <Grid item xs={12} sm={12} lg={5}>
-                  <Slider
-                    name="topicLevels"
-                    margin="normal"
-                    valueLabelDisplay="auto"
-                    aria-labelledby="disabled-slider"
-                    defaultValue={0}
-                    min={0}
-                    max={100}
-                    onChange={(e,value)=> handleOnChange({"topicLevels":value})}
-                  />
-                </Grid>
-              </Grid> */}
               <Grid item container direction="row">
                 <Grid item xs={12} sm={12} lg={5}>
                   <div>
@@ -109,7 +90,7 @@ export const PublisherForm = () => {
                   />
                 </Grid>
               </Grid>
-              <h2>Subscriber</h2>
+              {/* <h2>Subscriber</h2> */}
               <Grid item container direction="row">
                 <Grid item xs={12} sm={12} lg={5}>
                   <div>
@@ -129,25 +110,6 @@ export const PublisherForm = () => {
                   />
                 </Grid>
               </Grid>
-              {/* <Grid item container direction="row">
-                <Grid item xs={12} sm={12} lg={5}>
-                  <div>
-                    <Typography>Topic Levels </Typography>
-                  </div>
-                </Grid>
-                <Grid item xs={12} sm={12} lg={5}>
-                  <Slider
-                    name="subscriberTopicLevels"
-                    margin="normal"
-                    valueLabelDisplay="auto"
-                    aria-labelledby="disabled-slider"
-                    defaultValue={0}
-                    min={0}
-                    max={100}
-                    onChange={(e,value)=> handleOnChange({"subscriberTopicLevels":value})}
-                  />
-                </Grid>
-              </Grid> */}
               <Grid>
                 <div className="separator">
                   <div>

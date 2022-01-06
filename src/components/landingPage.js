@@ -1,10 +1,11 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Grid, Slide, Snackbar,CircularProgress,makeStyles } from "@material-ui/core";
+import { Grid, Slide, Snackbar,makeStyles } from "@material-ui/core";
 import { ConnectionForm } from "./forms/connectionForm";
 import { PublisherForm } from "./forms/testForm";
 import MuiAlert from "@material-ui/lab/Alert";
 import { clearSnackBar } from "../redux/actions/connectionAction";
+import ResultsPending from "./resultsLoading"
 import "../App.scss";
 
 const useStyles = makeStyles((theme) => ({
@@ -12,7 +13,8 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         justifyContent: "center",
         alignItems:"center",
-        marginTop: theme.spacing(30)
+        marginTop: theme.spacing(20),
+        height:"350px"
     },
 }))
 
@@ -33,7 +35,7 @@ const Landing = () => {
     <div className="container">
     {brokerReducer.pending?
      <div className={classes.spinner} >
-        <CircularProgress />
+        <ResultsPending/>
     </div>:
 
       <Grid
@@ -60,7 +62,7 @@ const Landing = () => {
         </Snackbar>
         <Grid item xs={12} sm={6}>
           <div className="card">
-            <h2>Settings </h2>
+            <h2>SETTING</h2>
             <ConnectionForm />
           </div>
         </Grid>

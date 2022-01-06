@@ -36,14 +36,40 @@
   @include container(90%);
 }
 
+.wave-container{
+	@include container(90%);
+}
 .container-color{
 	background-color: $footerBackground;
+	color: white;
 }
 .separator{
   margin: 8px;
-  padding-right: 6px;
+  padding-left: 6px;
+}
+.grid-separator{
+  margin: 8px;
+  padding-left: 90px;
 }
 
+.btn-separator{
+	margin-top: 15px;
+	margin-left: 33px;
+}
+.wave-separator{
+  margin-top: 45px;
+}
+
+.circle-seperator{
+	margin-top: 10px;
+}
+.result{
+	width: 800%;
+	height: 800px;
+}
+.result-card{
+	height: 800px;
+}
 .btnContainer{
   display: flex;
   justify-content: center;
