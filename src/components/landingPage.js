@@ -62,7 +62,7 @@ const Landing = () => {
         </Snackbar>
         <Grid item xs={12} sm={6}>
           <div className="card">
-            <h2>Settings </h2>
+            <h2>SETTING</h2>
             <ConnectionForm />
           </div>
         </Grid>

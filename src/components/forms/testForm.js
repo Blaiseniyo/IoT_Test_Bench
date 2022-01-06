@@ -32,7 +32,7 @@ export const PublisherForm = () => {
               alignItems="center"
               spacing={1}
             >
-              <h2>Publisher</h2>
+              <h2>TEST BROKER</h2>
               <Grid item container direction="row">
                 <Grid item xs={12}  sm={12} lg={5}>
                   <div>
