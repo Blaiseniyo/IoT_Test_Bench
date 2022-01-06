@@ -14,6 +14,8 @@ import {
 const initialState = {
 	pending: false,
 	connected: false,
+	subscription_status: false,
+	publish_status: false,
 	data: "",
 	snackBarMessage: {
 		open: false,
@@ -64,6 +66,7 @@ const ConnectionReducer = (state = initialState, action) => {
 				...state,
 				pending: false,
 				connected: true,
+				subscription_status: true,
 				data: action.info,
 				snackBarMessage: {
 					open: true,
@@ -93,6 +96,7 @@ const ConnectionReducer = (state = initialState, action) => {
 				...state,
 				pending: false,
 				connected: true,
+				publish_status: true,
 				data: action.info,
 				snackBarMessage: {
 					open: true,

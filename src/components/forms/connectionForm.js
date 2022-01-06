@@ -36,6 +36,14 @@ export const ConnectionForm = () => {
 		const color = reducer.connected ? "#388e3c" : "#3f51b5";
 		return color;
 	};
+	const renderSubBtnColor = () => {
+		const color = reducer.subscription_status ? "#388e3c" : "#3f51b5";
+		return color;
+	};
+	const renderPubBtnColor = () => {
+		const color = reducer.publish_status ? "#388e3c" : "#3f51b5";
+		return color;
+	};
 
 	const ref = useRef(null);
 	const testSubscriber = () => {
@@ -191,6 +199,7 @@ export const ConnectionForm = () => {
 												color="primary"
 												style={{
 													marginLeft: "5px",
+													backgroundColor: renderSubBtnColor(),
 												}}
 											>
 												Test Subscriber
@@ -203,6 +212,7 @@ export const ConnectionForm = () => {
 												margin="normal"
 												style={{
 													marginLeft: "5px",
+													backgroundColor: renderPubBtnColor(),
 												}}
 											>
 												Test Publisher
