@@ -29,6 +29,8 @@ const ConnectionReducer = (state = initialState, action) => {
 		case TEST_CONNECTION_PENDING:
 			return {
 				...state,
+				subscription_status: false,
+				publish_status: false,
 				pending: true,
 				connected: false,
 			};
@@ -36,6 +38,8 @@ const ConnectionReducer = (state = initialState, action) => {
 			return {
 				...state,
 				pending: false,
+				subscription_status: false,
+				publish_status: false,
 				connected: true,
 				data: action.info,
 				snackBarMessage: {
@@ -48,6 +52,8 @@ const ConnectionReducer = (state = initialState, action) => {
 			return {
 				...state,
 				pending: false,
+				subscription_status: false,
+				publish_status: false,
 				connected: false,
 				snackBarMessage: {
 					open: true,
@@ -60,6 +66,8 @@ const ConnectionReducer = (state = initialState, action) => {
 				...state,
 				pending: true,
 				connected: false,
+				subscription_status: false,
+				publish_status: false,
 			};
 		case TEST_SUBSCRIBER:
 			return {
@@ -79,6 +87,8 @@ const ConnectionReducer = (state = initialState, action) => {
 				...state,
 				pending: false,
 				connected: false,
+				subscription_status: false,
+				publish_status: false,
 				snackBarMessage: {
 					open: true,
 					severity: "error",
@@ -90,6 +100,8 @@ const ConnectionReducer = (state = initialState, action) => {
 				...state,
 				pending: true,
 				connected: false,
+				subscription_status: false,
+				publish_status: false,
 			};
 		case TEST_PUBLISHER:
 			return {
@@ -109,6 +121,8 @@ const ConnectionReducer = (state = initialState, action) => {
 				...state,
 				pending: false,
 				connected: false,
+				subscription_status: false,
+				publish_status: false,
 				snackBarMessage: {
 					open: true,
 					severity: "error",
